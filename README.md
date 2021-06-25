@@ -1,8 +1,8 @@
-# Twomes hardware repository template
+# Twomes P1 Gateway Hardware
 
-This repository contains the open hardware design files for the Twomes something device, which can be used as a [WeMos D1 Mini shield](https://www.wemos.cc/en/latest/d1_mini_shield/index.html), on top of a WeMos D1 Mini board, such as the [LilyGO TTGO T7 Mini32 V1.3 ESP32](https://github.com/LilyGO/ESP32-MINI-32-V1.3), which is based on an ESP32 SoC, or the [Wemos LOLIN D1 mini](https://www.wemos.cc/en/latest/d1/d1_mini.html), which is based on an ESP8266 SoC. 
-
-Describe the function of the shiels.
+This repository contains the open hardware design files for the Twomes P1 Gateway device, this is a dedicated device, which can wirelessly receive data from various other Twomes sensor using ESP-Now, and can connect to the P1 port of a Dutch smart energy meter, to receive data.
+The Twomes P1 Gateway can send this data to the Twomes Backoffice database using secure HTTPS.
+The P1 Gateway is uses an ESP32 Microcontroller and can be powered either directly through the P1 port itself on DSMR version 5.0^, or through a seperate USB port on DSMR version 4.x Smart Meters
 
 <img src="./Hardware/front.jpg" width="400" height="400" /> <img src="./Hardware/back.jpg" width="400" height="400" />
 
@@ -17,7 +17,7 @@ Describe the function of the shiels.
 * [Credits](#credits)
 
 ## General info
-This repository will contain the hardware designs, such as schematics and board layout files for the Twomes something shield.
+This repository will contain the hardware designs, such as schematics and board layout files for the Twomes P1 Gateway device.
 
 For the associated firmwware that you can run on this device, please see [this repository](https://github.com/energietransitie/twomes-opentherm-gateway-diyless).
 
@@ -74,23 +74,17 @@ The hardware designs in this repository are available under the [CERN-OHL-P v2 l
 
 ## Credits
 This open hardware design is a collaborative effort of:
-* <contributor name 1> · [@Github_handle_1](https://github.com/<github_handle_1>) · Twitter [@Twitter_handle_1](https://twitter.com/<twitter_handle_1>)
+* Sjors Smit · [@Shorts1999](https://github.com/Shorts1999)
 * <contributor name 2> · [@Github_handle_2](https://github.com/<github_handle_2>) · Twitter [@Twitter_handle_2](https://twitter.com/<twitter_handle_2>)
 * <contributor name 3> · [@Github_handle_3](https://github.com/<github_handle_3>) · Twitter [@Twitter_handle_3](https://twitter.com/<twitter_handle_3>)
-* etc. 
 
 Thanks also go to:
-* <thanks name 1> · [@Github_handle_1](https://github.com/<github_handle_1>) · Twitter [@Twitter_handle_1](https://twitter.com/<twitter_handle_1>)
-* <thanks name 2> · [@Github_handle_2](https://github.com/<github_handle_2>) · Twitter [@Twitter_handle_2](https://twitter.com/<twitter_handle_2>)
-* <thanks name 3> · [@Github_handle_3](https://github.com/<github_handle_3>) · Twitter [@Twitter_handle_3](https://twitter.com/<twitter_handle_3>)
-* etc. 
+* Marco Winkelman · [@MarcoW71](https://github.com/MarcoW71)
 
 Product owner:
 * Marco Winkelman · [@MarcoW71](https://github.com/MarcoW71)
 
 We use and gratefully aknowlegde the efforts of the makers of the following designs:
 
-* [library name 1 and version](library 1 URL), by <copyright holder name 1>, licensed under [license 1 name](license1 URL)
-* [library name 2 and version](library 2 URL), by <copyright holder name 2>, licensed under [license 2 name](license2 URL)
-* [library name 3 and version](library 3 URL), by <copyright holder name 3>, licensed under [license 3 name](license3 URL)
-* etc. 
+* [KiCad](https://www.kicad.org), licensed under [GNU GPL v3](http://www.gnu.org/licenses/gpl-3.0.en.html)
+
