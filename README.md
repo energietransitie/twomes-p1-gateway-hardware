@@ -2,7 +2,7 @@
 
 This repository contains the open hardware design files for the Twomes P1 Gateway device, this is a dedicated device, which can wirelessly receive data from various other Twomes sensor using ESP-Now, and can connect to the P1 port of a Dutch smart energy meter, to receive data.
 The Twomes P1 Gateway can send this data to the Twomes Backoffice database using secure HTTPS.
-The P1 Gateway is uses an ESP32 Microcontroller and can be powered either directly through the P1 port itself on DSMR version 5.0^, or through a seperate USB port on DSMR version 4.x Smart Meters
+The P1 Gateway is uses an ESP32 Microcontroller and can be powered either directly through the P1 port itself on DSMR version 5.0, or through a seperate USB port on DSMR version 4.x Smart Meters
 
 <img src="./Hardware/front.jpg" width="400" height="400" /> <img src="./Hardware/back.jpg" width="400" height="400" />
 
@@ -19,7 +19,7 @@ The P1 Gateway is uses an ESP32 Microcontroller and can be powered either direct
 ## General info
 This repository will contain the hardware designs, such as schematics and board layout files for the Twomes P1 Gateway device.
 
-For the associated firmwware that you can run on this device, please see [this repository](https://github.com/energietransitie/twomes-opentherm-gateway-diyless).
+For the associated firmwware that you can run on this device, please see [this repository](https://github.com/energietransitie/twomes-p1-poort-logger-gateway).
 
 ## Prerequisites
 Describe which hardware and software you need to produce and/or develop the hardawre. If the prerequisites are different for users that only wish to produce hardware versus uers that (also) wish to develop new versions of the hardware, you may want to move the prerequisites section as a subsection of each of those sections.
