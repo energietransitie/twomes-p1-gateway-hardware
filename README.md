@@ -34,7 +34,7 @@ The folder [Twomes P1 Gateway Enclosures](https://github.com/energietransitie/tw
 The fabrication output files can be ordered from JLCPCB, upload the Gerber files in a zip to their [quote page](https://cart.jlcpcb.com/quote)
 Select the amount of PCBs and a colour for silkscreen. All other options can be left on default.
 
-if SMT assembly is desired, also select this option before ordering. This will take you to a page where the BOM and POS file can be uploaded. These can be found [here](https://github.com/energietransitie/twomes-P1-gateway-hardware/tree/main/TwomesGateway/Output_files/FABRICATION/BOM_AND_POS)
+if SMT assembly is desired, also select this option before ordering. This will take you to a page where the BOM and POS file can be uploaded. These can be found [here](https://github.com/energietransitie/twomes-P1-gateway-hardware/tree/main/TwomesGateway/Output_files/FABRICATION/BOM_AND_POS) Use the files "BOM_TwomesGatewayJLCPCB.csv" and "TwomesGateway-top-pos.csv"
 
 
 ### Enclosure
