@@ -1,0 +1,5 @@
+This file contains a list of changes made to the "Twomes P1-Gateway" hardware after the original designs by 
+Twomes - Digital Twins for the Energy transition
+Research Group Energy Transition, Windesheim University of Applied sciences, Zwolle, the Netherlands
+
+The hardware is licensed under the CERN-OHL-P v2 License
