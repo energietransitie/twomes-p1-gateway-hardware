@@ -19,7 +19,7 @@ The P1 Gateway is uses an ESP32 Microcontroller and can be powered either direct
 ## General info
 This repository will contain the hardware designs, such as schematics and board layout files for the Twomes P1 Gateway device.
 
-For the associated firmwware that you can run on this device, please see [this repository](https://github.com/energietransitie/twomes-p1-poort-logger-gateway).
+For the associated firmwware that you can run on this device, please see [this repository](https://github.com/energietransitie/twomes-p1-port-logger-gateway).
 
 ## Prerequisites
 Describe which hardware and software you need to produce and/or develop the hardawre. If the prerequisites are different for users that only wish to produce hardware versus uers that (also) wish to develop new versions of the hardware, you may want to move the prerequisites section as a subsection of each of those sections.
