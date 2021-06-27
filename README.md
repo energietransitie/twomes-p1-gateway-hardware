@@ -4,7 +4,7 @@ This repository contains the open hardware design files for the Twomes P1 Gatewa
 The Twomes P1 Gateway can send this data to the Twomes Backoffice database using secure HTTPS.
 The P1 Gateway is uses an ESP32 Microcontroller and can be powered either directly through the P1 port itself on DSMR version 5.0, or through a seperate USB port on DSMR version 4.x Smart Meters
 
-<img src="./images/front.jpg" width="400" height="600" /> <img src="./images/back.jpg" width="400" height="600" />
+<img src="./images/front.jpg" height="600" /> <img src="./images/back.jpg" height="600" />
 
 ## Table of contents
 * [General info](#general-info)
