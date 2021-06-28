@@ -44,7 +44,7 @@ If the printing is handled by an external source, send the STL files to their se
 ## Developing
 ### Developing the PCBs
 The PCB files are designed using KiCad, which can be downloaded [here](https://www.kicad.org/download/) for free.
-Alternatively the files can sometimes be imported/converted to different EDA tools.
+Some EDA tools might be able to convert the files, however this is not supported and might result in errors. Converting the files to other EDA tools is at your own risk.
 
 To export the modified PCBs. Consult the webpage of the PCB manufacturer for a guide on how their service prefers the output files.
 JLCPCB has a guide on how to export Gerbers [here](https://support.jlcpcb.com/article/149-how-to-generate-gerber-and-drill-files-in-kicad) and on how to export the BOM and POS files [here](https://support.jlcpcb.com/article/84-how-to-generate-the-bom-and-centroid-file-from-kicad)
