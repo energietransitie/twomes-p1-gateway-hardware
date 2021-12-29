@@ -1,8 +1,6 @@
 # Twomes P1 Gateway Hardware
 
-This repository contains the open hardware design files for the Twomes P1 Gateway device, this is a dedicated device, which can wirelessly receive data from various other Twomes sensor using ESP-Now, and can connect to the P1 port of a Dutch smart energy meter, to receive data.
-The Twomes P1 Gateway can send this data to the Twomes Backoffice database using secure HTTPS.
-The P1 Gateway is uses an ESP32 Microcontroller and can be powered either directly through the P1 port itself on DSMR version 5.0, or through a seperate USB port on DSMR version 4.x Smart Meters
+This repository contains the open hardware design files for the Twomes P1 Gateway device, which can read measurement data from a smart meter adhering to the Dutch Smart Meter Rqreuiements (DSMR). It can also receive data from various other Twomes 'satellite' measurement devices via the [ESP-NOW](https://www.espressif.com/en/products/software/esp-now/overview) protocol. The Twomes P1 Gateway can upload this measurement data to a Twomes server using secure HTTPS.
 
 <img src="./images/front.jpg" height="600" /> <img src="./images/back.jpg" height="600" />
 
@@ -17,39 +15,37 @@ The P1 Gateway is uses an ESP32 Microcontroller and can be powered either direct
 * [Credits](#credits)
 
 ## General info
-This repository will contain the hardware designs, such as schematics and board layout files for the Twomes P1 Gateway device.
+This repository will contains the hardware designs, such as schematics and board layout files for the Twomes P1 Gateway device.
 
-For the associated firmwware that you can run on this device, please see [this repository](https://github.com/energietransitie/twomes-p1-gateway-firmware).
-
-## Prerequisites
-Describe which hardware and software you need to produce and/or develop the hardawre. If the prerequisites are different for users that only wish to produce hardware versus uers that (also) wish to develop new versions of the hardware, you may want to move the prerequisites section as a subsection of each of those sections.
+The associated firmwware that you can run on this device can be found in [this repository](https://github.com/energietransitie/twomes-p1-gateway-firmware).
 
 ## Producing
 
-The folder [Output_files](./TwomesGateway/Output_files/FABRICATION) contains the necessary files to manufacture the PCBs. The files have been exported through the requirements of [JLCPCB](https://www.jlcpcb.com).
-
-The folder [Twomes P1 Gateway Enclosures](./Twomes%20P1%20Gateway%20Enclosures) contains both, Fusion360 source files, and exported STL files for the Twomes P1 enclosures. The STL files can be imported into any slicer and turned into G-Code for a 3D printer.
 
 ### Printed Ciruit Board
-The fabrication output files can be ordered from JLCPCB, upload the Gerber files in a zip to their [quote page](https://cart.jlcpcb.com/quote)
-Select the amount of PCBs and a colour for silkscreen. All other options can be left on default.
+To manufacture the printed circuit board you can use various PCB services. The folder [Output_files](./pcb/Output_files/FABRICATION) contains the necessary files. 
 
-I SMT assembly is desired, also select this option before ordering. This will take you to a page where the BOM and POS file can be uploaded. Use the files [BOM_TwomesGatewayJLCPCB.csv](./TwomesGateway/Output_files/FABRICATION/BOM_AND_POS/BOM_TwomesGatewayJLCPCB.csv) and [TwomesGateway-top-pos.csv](./TwomesGateway/Output_files/FABRICATION/BOM_AND_POS/TwomesGateway-top-pos.csv).
+To have the PCBs manufactures via [JLCPCB](https://www.jlcpcb.com, the PCB manufacturer we used, upload the Gerber files in a zip to their [quote page](https://cart.jlcpcb.com/quote), select the amount of PCBs and a colour for silkscreen. All other options can be left on default. If SMT assembly is desired, also select this option before ordering. This will take you to a page where the BOM and POS file can be uploaded. Use the files [BOM_TwomesGatewayJLCPCB.csv](./pcb/Output_files/FABRICATION/BOM_AND_POS/BOM_TwomesGatewayJLCPCB.csv) and [TwomesGateway-top-pos.csv](./pcb/Output_files/FABRICATION/BOM_AND_POS/TwomesGateway-top-pos.csv).
 
 ### Enclosure
-The enclosures can be 3D printed. open the STL files with your preferred slicer software and export it with the settings best suited for your printer.
-If the printing is handled by an external source, send the STL files to their service.
+The folder [Twomes P1 Gateway Enclosures](./enclosure) contains both Fusion360 source files and exported STL files for the Twomes P1 Gateway enclosure. The STL files can be imported into any slicer and turned into G-Code for a 3D printer. You can also upload  the STL files to an online 3D printing service of your choice.
 
 ## Developing
-### Developing the PCBs
-The PCB files are designed using [KiCad](https://www.kicad.org/download/), which can be downloaded for free.
+To change the hardware designs, you need:
+* [KiCad](https://www.kicad.org/download/) installed to change te PCB deseign. 
+
 Some EDA tools might be able to convert the files, however this is not supported and might result in errors.
 
-To export the modified PCBs. Consult the webpage of the PCB manufacturer for a guide on how their service prefers the output files.
-JLCPCB has a [uide on how to export Gerbers](https://support.jlcpcb.com/article/149-how-to-generate-gerber-and-drill-files-in-kicad) and on [how to export the BOM and POS files](https://support.jlcpcb.com/article/84-how-to-generate-the-bom-and-centroid-file-from-kicad)
+To export the modified PCBs, consult the webpage of your PCB manufacturer of choice for guidance on how to produce the output files.
+
+FOr example, JLCPCB has a [guide on how to export Gerbers](https://support.jlcpcb.com/article/149-how-to-generate-gerber-and-drill-files-in-kicad) and on [how to export the BOM and POS files](https://support.jlcpcb.com/article/84-how-to-generate-the-bom-and-centroid-file-from-kicad)
 
 ## Features
-The Twomes P1 Gateway contains an ESP32 Microcontroller, an FTDI compatible serial programming header, a USB input for a power supply, and a RJ12 port to connect to the P1 port of a smart meter.
+The Twomes P1 Gateway features:
+* an ESP32 microcontroller;
+* a female RJ12 connector for connection to the P1 port of a smart meter adhering to the Dutch Smart Meter Requirements (smart meters compatibe to DSMR v5 provide enough power for the Twomes P1 gateway).
+* USB input for a 5 V power supply (only needed for smart meters adhering to DSMR v4 and lower)
+* FTDI compatible serial programming header (3,3 V).
 
 ## Status
 Project is: _Ready for testing_
