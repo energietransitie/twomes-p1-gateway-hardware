@@ -14,7 +14,7 @@ This repository contains the open hardware design files for the Twomes P1 Gatewa
 * [Credits](#credits)
 
 ## General info
-This repository will contains the hardware designs, such as schematics and board layout files for the Twomes P1 Gateway device.
+This repository contains the hardware designs, such as [schematics](./pcb/Output_files/SCH/TwomesGateway.pdf) and board layout files for the Twomes P1 Gateway device.
 
 The associated firmware that you can run on this device can be found in [this repository](https://github.com/energietransitie/twomes-p1-gateway-firmware).
 
@@ -22,9 +22,9 @@ The associated firmware that you can run on this device can be found in [this re
 
 
 ### Printed Circuit Board
-To manufacture the printed circuit board you can use various PCB services. The folder [Output_files](./pcb/Output_files/FABRICATION) contains the necessary files. 
+To manufacture the printed circuit board you can use various PCB services. 
 
-To have the PCBs manufactures via [JLCPCB](https://www.jlcpcb.com), the PCB manufacturer we used, upload the Gerber files in a zip to their [quote page](https://cart.jlcpcb.com/quote), select the amount of PCBs and a colour for silkscreen. All other options can be left on default. If SMT assembly is desired, also select this option before ordering. This will take you to a page where the BOM and POS file can be uploaded. Use the files [BOM_TwomesGatewayJLCPCB.csv](./pcb/Output_files/FABRICATION/BOM_AND_POS/BOM_TwomesGatewayJLCPCB.csv) and [TwomesGateway-top-pos.csv](./pcb/Output_files/FABRICATION/BOM_AND_POS/TwomesGateway-top-pos.csv).
+To have the PCBs manufactured via [JLCPCB](https://www.jlcpcb.com), the PCB manufacturer we used, you can re-use the files in the folder [Output_files](./pcb/Output_files/FABRICATION). Upload the Gerber files in a zip to their [quote page](https://cart.jlcpcb.com/quote), select the amount of PCBs and a colour for silkscreen. All other options can be left on default. If SMT assembly is desired, also select this option before ordering. This will take you to a page where the BOM and POS file can be uploaded. Use the files [BOM_TwomesGatewayJLCPCB.csv](./pcb/Output_files/FABRICATION/BOM_AND_POS/BOM_TwomesGatewayJLCPCB.csv) and [TwomesGateway-top-pos.csv](./pcb/Output_files/FABRICATION/BOM_AND_POS/TwomesGateway-top-pos.csv).
 
 ### Enclosure
 The folder [enclosure](./enclosure) contains both Fusion360 source files and exported STL files for the Twomes P1 Gateway enclosure. The STL files can be imported into any slicer and turned into G-Code for a 3D printer. You can also upload  the STL files to an online 3D printing service of your choice.
@@ -42,7 +42,7 @@ The Twomes P1 Gateway features the follwoing main hardware components:
 * ESP32-WROOM-32D module;
 * female RJ12 connector for connection to the P1 port of a smart meter adhering to the Dutch Smart Meter Requirements (smart meters compatible with DSMR v5 provide enough power for the Twomes P1 gateway);
 * micro USB input for a 5 V power supply (only needed for smart meters adhering to DSMR v4 and lower);
-* FTDI compatible serial programming header (3,3 V).
+* FTDI compatible serial programming header (3.3 V).
 
 ## Status
 Project is: _Ready for testing_
