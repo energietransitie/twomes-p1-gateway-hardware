@@ -2,7 +2,7 @@
 
 This repository contains the open hardware design files for the Twomes P1 Gateway device, which can read measurement data from a smart meter adhering to the Dutch Smart Meter Requirements (DSMR). It can also receive data from various other Twomes 'satellite' measurement devices via the [ESP-NOW](https://www.espressif.com/en/products/software/esp-now/overview) protocol. The Twomes P1 Gateway can upload this measurement data to a Twomes server via Wi-Fi using secure HTTPS.
 
-<img src="./images/front.jpg" height="600" /> <img src="./images/back.jpg" height="600" />
+<img src="./images/pcb.jpg" height="600" />
 
 ## Table of contents
 * [General info](#general-info)
