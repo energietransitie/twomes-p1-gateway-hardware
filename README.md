@@ -1,14 +1,11 @@
 # Twomes P1 Gateway Hardware
 
-This repository contains the open hardware design files for the Twomes P1 Gateway device, this is a dedicated device, which can wirelessly receive data from various other Twomes sensor using ESP-Now, and can connect to the P1 port of a Dutch smart energy meter, to receive data.
-The Twomes P1 Gateway can send this data to the Twomes Backoffice database using secure HTTPS.
-The P1 Gateway is uses an ESP32 Microcontroller and can be powered either directly through the P1 port itself on DSMR version 5.0, or through a seperate USB port on DSMR version 4.x Smart Meters
+This repository contains the open hardware design files for the Twomes P1 Gateway device, which can read measurement data from a smart meter adhering to the Dutch Smart Meter Requirements (DSMR). It can also receive data from various other Twomes 'satellite' measurement devices via the [ESP-NOW](https://www.espressif.com/en/products/software/esp-now/overview) protocol. The Twomes P1 Gateway can upload this measurement data to a Twomes server via Wi-Fi using secure HTTPS.
 
-<img src="./images/front.jpg" height="600" /> <img src="./images/back.jpg" height="600" />
+<img src="./images/pcb.jpg" height="600" />
 
 ## Table of contents
 * [General info](#general-info)
-* [Prerequisites](#prerequisites)
 * [Producing](#producing)
 * [Developing](#developing) 
 * [Features](#features)
@@ -17,55 +14,65 @@ The P1 Gateway is uses an ESP32 Microcontroller and can be powered either direct
 * [Credits](#credits)
 
 ## General info
-This repository will contain the hardware designs, such as schematics and board layout files for the Twomes P1 Gateway device.
+This repository contains the source files and fabrication files of the hardware designs of the Twomes P1 Gateway device and its enclosure. It also includes a `docs` folder with recent printouts of the [schematics](./docs/twomes-p1-gateway-sch.pdf) and [PCB layout](./docs/twomes-p1-gateway-pcb.pdf). 
 
-For the associated firmwware that you can run on this device, please see [this repository](https://github.com/energietransitie/twomes-p1-gateway-firmware).
-
-## Prerequisites
-Describe which hardware and software you need to produce and/or develop the hardawre. If the prerequisites are different for users that only wish to produce hardware versus uers that (also) wish to develop new versions of the hardware, you may want to move the prerequisites section as a subsection of each of those sections.
+The associated firmware that you can run on this device can be found in [this repository](https://github.com/energietransitie/twomes-p1-gateway-firmware).
 
 ## Producing
 
-The folder [Output_files](./TwomesGateway/Output_files/FABRICATION) contains the necessary files to manufacture the PCBs. The files have been exported through the requirements of [JLCPCB](https://www.jlcpcb.com).
 
-The folder [Twomes P1 Gateway Enclosures](./Twomes%20P1%20Gateway%20Enclosures) contains both, Fusion360 source files, and exported STL files for the Twomes P1 enclosures. The STL files can be imported into any slicer and turned into G-Code for a 3D printer.
+### Printed Circuit Board
+To fabricate the printed circuit board you can use various PCB services. 
 
-### Printed Ciruit Board
-The fabrication output files can be ordered from JLCPCB, upload the Gerber files in a zip to their [quote page](https://cart.jlcpcb.com/quote)
-Select the amount of PCBs and a colour for silkscreen. All other options can be left on default.
-
-I SMT assembly is desired, also select this option before ordering. This will take you to a page where the BOM and POS file can be uploaded. Use the files [BOM_TwomesGatewayJLCPCB.csv](./TwomesGateway/Output_files/FABRICATION/BOM_AND_POS/BOM_TwomesGatewayJLCPCB.csv) and [TwomesGateway-top-pos.csv](./TwomesGateway/Output_files/FABRICATION/BOM_AND_POS/TwomesGateway-top-pos.csv).
+The folder [pcb/jlcpcb](./pcb/jlcpcb) includes all exported files needed to have the PCBs manufactured by [JLCPCB](https://www.jlcpcb.com). Upload the [zipped gerber files](./pcb/jlcpcb/gerber-TwomesGateway.zip) to the [JLCPCB quote page](https://cart.jlcpcb.com/quote), select the amount of PCBs and a colour for the silkscreen. All other options can be left on default. If SMT assembly is desired, also select this option before ordering. This will take you to a page where the BOM and POS file can be uploaded. Use the files [BOM-TwomesGateway.csv](./pcb/jlcpcb/assembly/BOM-TwomesGateway.csv) and [CPL-TwomesGateway.csv](./pcb/jlcpcb/assembly/BOM-TwomesGateway.csv).
 
 ### Enclosure
-The enclosures can be 3D printed. open the STL files with your preferred slicer software and export it with the settings best suited for your printer.
-If the printing is handled by an external source, send the STL files to their service.
+To fabricate the enclosure you can use your own 3D printer or use a 3D printing service. 
+
+<img src="./images/enclosure.jpg" height="600" />
+
+The folder [enclosure/fabrication](./enclosure/fabrication) contains exported STL files for the [case](./enclosure/fabrication/twomes-p1-gateway-enclosure-case.stl), the [lid](./enclosure/fabrication/twomes-p1-gateway-enclosure-lid.stl) and the [button](./enclosure/fabrication/twomes-p1-gateway-enclosure-button.stl) of the Twomes P1-gateway enclosure. The STL files can be imported into any slicer and turned into G-Code for a 3D printer.
 
 ## Developing
-### Developing the PCBs
-The PCB files are designed using [KiCad](https://www.kicad.org/download/), which can be downloaded for free.
-Some EDA tools might be able to convert the files, however this is not supported and might result in errors.
 
-To export the modified PCBs. Consult the webpage of the PCB manufacturer for a guide on how their service prefers the output files.
-JLCPCB has a [uide on how to export Gerbers](https://support.jlcpcb.com/article/149-how-to-generate-gerber-and-drill-files-in-kicad) and on [how to export the BOM and POS files](https://support.jlcpcb.com/article/84-how-to-generate-the-bom-and-centroid-file-from-kicad)
+### Printed Circuit Board
+To change the hardware design of the PCB, you need:
+* [KiCad](https://www.kicad.org/download/) installed to change te PCB design. 
 
+The KiCad source files of the PCB can be found in the folder [pcb](./pcb).
+
+To convert the PCBs into a format suitable for fabrication, consult the webpage of your PCB manufacturer of choice. For example, see the [JLCPCB guide on how to export Gerbers](https://support.jlcpcb.com/article/149-how-to-generate-gerber-and-drill-files-in-kicad) and the  [JLCPCB guide how to export the BOM and POS files](https://support.jlcpcb.com/article/84-how-to-generate-the-bom-and-centroid-file-from-kicad). You may also use a KiCad plug-in for this purpose such as [kicad-jlcpcb-tools](https://github.com/Bouni/kicad-jlcpcb-tools).
+
+### Enclosure
+To change the hardware design of the enclosure, you need either:
+* [Autodesk Fusion 360](https://www.kicad.org/download/) installed (Autodesk provides 30 day free trials and [free one-year educational access](https://www.autodesk.com/education/edu-software/overview?sorting=featured&filters=individual) to its products and services for eligible students, teachers and research staff); 
+* or [FreeCAD](https://www.freecadweb.org/), an open source alternative.
+
+The source files of the enclosure can be found in the folder [enclosure](./enclosure). We include both .f3d source files and .step source files we obtained after conversion.
 ## Features
-The Twomes P1 Gateway contains an ESP32 Microcontroller, an FTDI compatible serial programming header, a USB input for a power supply, and a RJ12 port to connect to the P1 port of a smart meter.
+The Twomes P1 Gateway features the follwoing main hardware components:
+* ESP32-WROOM-32D module;
+* female RJ12 connector for connection to the P1 port of a smart meter adhering to the Dutch Smart Meter Requirements (smart meters compatible with DSMR v5 provide enough power for the Twomes P1 gateway);
+* micro USB input for a 5 V power supply (only needed for smart meters adhering to DSMR v4 and lower);
+* FTDI compatible serial programming header (3.3 V).
 
 ## Status
-Project is: _Ready for testing_
+Project is: _in progress_
 
 ## License
-The hardware designs in this repository are available under the [CERN-OHL-P v2 license](./LICENSE.md), Copyright 2021 [Research group Energy Transition, Windesheim University of Applied Sciences](https://windesheim.nl/energietransitie)
+The hardware designs in this repository are available under the [CERN-OHL-P v2 license](./LICENSE), Copyright 2022 [Research group Energy Transition, Windesheim University of Applied Sciences](https://windesheim.nl/energietransitie)
 
 ## Credits
-This open hardware design is a collaborative effort of:
+This open hardware design made by:
 * Sjors Smit · [@Shorts1999](https://github.com/Shorts1999)
 
 Thanks also go to:
 * Fredrik-Otto Lautenbag ·  [@Fredrik1997](https://github.com/Fredrik1997)
 * Gerwin Buma ·  [@GerwinBuma](https://github.com/GerwinBuma) 
 * Marco Winkelman · [@MarcoW71](https://github.com/MarcoW71)
-* the makers of [KiCad](https://www.kicad.org)
 
 Product owner:
 * Marco Winkelman · [@MarcoW71](https://github.com/MarcoW71)
+
+We use and gratefully acknowlegde the efforts of the makers of:
+* [KiCad Libraries](https://kicad.github.io/), by the KiCad Development Team, licensed under [an adapted version of the CC-BY-SA 4.0 License](https://www.kicad.org/libraries/license/)
