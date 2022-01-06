@@ -44,9 +44,9 @@ The KiCad source files of the PCB can be found in the folder [pcb](./pcb).
 To convert the PCBs into a format suitable for fabrication, consult the webpage of your PCB manufacturer of choice. For example, see the [JLCPCB guide on how to export Gerbers](https://support.jlcpcb.com/article/149-how-to-generate-gerber-and-drill-files-in-kicad) and the  [JLCPCB guide how to export the BOM and POS files](https://support.jlcpcb.com/article/84-how-to-generate-the-bom-and-centroid-file-from-kicad). You may also use a KiCad plug-in for this purpose such as [kicad-jlcpcb-tools](https://github.com/Bouni/kicad-jlcpcb-tools).
 
 ### Enclosure
-To change the hardware design of the enclosure, you need:
+To change the hardware design of the enclosure, you need either:
 * [Autodesk Fusion 360](https://www.kicad.org/download/) installed (Autodesk provides 30 day free trials and [free one-year educational access](https://www.autodesk.com/education/edu-software/overview?sorting=featured&filters=individual) to its products and services for eligible students, teachers and research staff); 
-* [FreeCAD](https://www.freecadweb.org/), an open source alternative.
+* or [FreeCAD](https://www.freecadweb.org/), an open source alternative.
 
 The source files of the enclosure can be found in the folder [enclosure](./enclosure). We include both .f3d source files and .step source files we obtained after conversion.
 ## Features
@@ -57,7 +57,7 @@ The Twomes P1 Gateway features the follwoing main hardware components:
 * FTDI compatible serial programming header (3.3 V).
 
 ## Status
-Project is: _Ready for testing_
+Project is: _in progress_
 
 ## License
 The hardware designs in this repository are available under the [CERN-OHL-P v2 license](./LICENSE), Copyright 2022 [Research group Energy Transition, Windesheim University of Applied Sciences](https://windesheim.nl/energietransitie)
@@ -75,4 +75,4 @@ Product owner:
 * Marco Winkelman · [@MarcoW71](https://github.com/MarcoW71)
 
 We use and gratefully acknowlegde the efforts of the makers of the following designs:
-* [KiCad Libraries](https://kicad.github.io/), by the KiCad Development Team, licensed under [adapted version of the CC-BY-SA 4.0 License](https://www.kicad.org/libraries/license/)
+* [KiCad Libraries](https://kicad.github.io/), by the KiCad Development Team, licensed under [an adapted version of the CC-BY-SA 4.0 License](https://www.kicad.org/libraries/license/)
