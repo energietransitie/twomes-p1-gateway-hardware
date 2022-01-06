@@ -52,7 +52,7 @@ To change the hardware design of the enclosure, you need either:
 
 The source files of the enclosure can be found in the folder [enclosure](./enclosure). We include both .f3d source files and .step source files we obtained after conversion.
 ## Features
-The Twomes P1 Gateway features the follwoing main hardware components:
+The Twomes P1 Gateway features the following main hardware components:
 * ESP32-WROOM-32D module;
 * female RJ12 connector for connection to the P1 port of a smart meter adhering to the Dutch Smart Meter Requirements (smart meters compatible with DSMR v5 provide enough power for the Twomes P1 gateway);
 * micro USB input for a 5 V power supply (only needed for smart meters adhering to DSMR v4 and lower);
