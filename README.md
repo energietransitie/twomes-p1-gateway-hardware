@@ -26,6 +26,8 @@ To fabricate the printed circuit board you can use various PCB services.
 
 The folder [pcb/jlcpcb](./pcb/jlcpcb) includes all exported files needed to have the PCBs manufactured by [JLCPCB](https://www.jlcpcb.com). Upload the [zipped gerber files](./pcb/jlcpcb/gerber-TwomesGateway.zip) to the [JLCPCB quote page](https://cart.jlcpcb.com/quote), select the amount of PCBs and a colour for the silkscreen. All other options can be left on default. If SMT assembly is desired, also select this option before ordering. This will take you to a page where the BOM and POS file can be uploaded. Use the files [BOM-TwomesGateway.csv](./pcb/jlcpcb/assembly/BOM-TwomesGateway.csv) and [CPL-TwomesGateway.csv](./pcb/jlcpcb/assembly/BOM-TwomesGateway.csv).
 
+N.B. All components marked "DO NOT PLACE" in the BOM-*.csv file can not be ordered from JLCPCB and need to be ordered from other services and placed manually.
+
 ### Enclosure
 To fabricate the enclosure you can use your own 3D printer or use a 3D printing service. 
 
