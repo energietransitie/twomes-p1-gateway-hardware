@@ -74,5 +74,5 @@ Thanks also go to:
 Product owner:
 * Marco Winkelman · [@MarcoW71](https://github.com/MarcoW71)
 
-We use and gratefully acknowlegde the efforts of the makers of the following designs:
+We use and gratefully acknowlegde the efforts of the makers of:
 * [KiCad Libraries](https://kicad.github.io/), by the KiCad Development Team, licensed under [an adapted version of the CC-BY-SA 4.0 License](https://www.kicad.org/libraries/license/)
