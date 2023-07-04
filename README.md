@@ -16,7 +16,9 @@ This repository contains the open hardware design files for the Twomes P1 Gatewa
 ## General info
 This repository contains the source files and fabrication files of the hardware designs of the Twomes P1 Gateway device and its enclosure. It also includes a `docs` folder with recent printouts of the [schematics](./docs/twomes-p1-gateway-sch.pdf) and [PCB layout](./docs/twomes-p1-gateway-pcb.pdf). 
 
-The associated firmware that you can run on this device can be found in [this repository](https://github.com/energietransitie/twomes-p1-gateway-firmware).
+You can run different kinds of firmware on this device:
+- [twomes-p1-reader-firmware](https://github.com/energietransitie/twomes-p1-reader-firmware), if you need it to work on a server that supports v2 of the Twomes API.
+- [twomes-p1-gateway-firmware](https://github.com/energietransitie/twomes-p1-gateway-firmware), if you need the device to serve as a gateway for the [twomes-room-monitor](https://github.com/energietransitie/twomes-room-monitor-firmware) and/or [twomes-boiler-monitor](https://github.com/energietransitie/twomes-boiler-monitor-firmware).
 
 ## Producing
 
